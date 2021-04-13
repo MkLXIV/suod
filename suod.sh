@@ -10,4 +10,4 @@ insults=(
 
 num_insults=${#insults[@]}
 echo ${insults[$(($RANDOM % num_insults))]}
-sudo $@
+sudo "$@"
