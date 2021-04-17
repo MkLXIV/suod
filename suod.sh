@@ -49,8 +49,7 @@ declare -A pkg_mgr_typos=(
 declare -a cmd
 
 # Construct the full corrected command from the arguments.
-if [ $FIX_PKG_TYPOS == 1 ] && [ $# -gt 0 ] && [ ! -z "${pkg_mgr_typos[$1]}" ]
-then
+if [ $FIX_PKG_TYPOS == 1 ] && [ $# -gt 0 ] && [ ! -z "${pkg_mgr_typos[$1]}" ]; then
     cmd+=${pkg_mgr_typos[$1]}
 
     # Only add the other agruments if they exist.
