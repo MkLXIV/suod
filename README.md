@@ -20,3 +20,6 @@ By default, fixing package manager names is disabled in case any of the mistyped
 
 ## Contributing
 If you found a bug with `suod` or want a new feature, open an issue or submit a pull request through GitHub and it'll be reviewed. **If you submmit a pull request, ensure that `FIX_PKG_TYPOS` is set to `0` in `suod.sh`!** This is for predictable defaults without resorting to a configuration file for something so simple.
+
+## License
+`suod` is licensed under the **Creative Commons Zero v1.0 Universal** license. That is, it's in the public domain. This code is so simple it doesn't really need something like the GNU GPL, the MIT License, BSD 2/3 clause, etc. If anything, I hope it teaches newcomers to Bash scripting some new tricks or is useful for solving oddly specific issues like constructing usable command sequences to call from a script.
