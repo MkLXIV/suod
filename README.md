@@ -12,7 +12,7 @@ To install and get started with `suod`, you must be using Bash version 4 or high
 ### Installation
 Firstly, clone this repository and make sure the script is marked as executable:
 ```bash
-git clone https://github.com/cvui/suod
+git clone https://github.com/c-Vui/suod
 cd cvui
 chmod +x suod.sh
 ```
