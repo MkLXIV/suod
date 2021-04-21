@@ -27,7 +27,7 @@ alias sduo=/path/to/suod.sh
 By default, fixing package manager names is disabled in case any of the mistyped package manager names are actually commands on your system. While I've attempted to keep the list of mistyped package manager names free of actual commands, even if obscure, I can't guarantee that there's no command with those names on your own system. Note that not every possible misspelling is included, just some that I feel are common or are probably common (I don't use every package manager). **To enable fixing package manager names**, change `FIX_PKG_TYPOS=0` near the top of the `suod.sh` to `FIX_PKG_TYPOS=1`.
 
 ## Contributing
-If you found a bug with `suod` or want a new feature, open an issue or submit a pull request through GitHub and it'll be reviewed. **If you submmit a pull request, ensure that `FIX_PKG_TYPOS` is set to `0` in `suod.sh`!** This is for predictable defaults without resorting to a configuration file for something so simple.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Future plans
 - [ ] Provide a means to turn off insults and instead display what the command corrected to. This should be fairly easy to implement.
