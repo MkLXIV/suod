@@ -13,7 +13,7 @@ To install and get started with `suod`, you must be using Bash version 4 or high
 Firstly, clone this repository and make sure the script is marked as executable:
 ```bash
 git clone https://github.com/c-Vui/suod
-cd cvui
+cd suod
 chmod +x suod.sh
 ```
 If you want to use this to cover multiple misspellings of `sudo`, you can copy this script somewhere convenient and `alias` it in your `.bashrc` as needed:
