@@ -6,7 +6,8 @@ When submitting pull requests, ensure the value of all configuration variables i
 
 |Variable|Default Value|Function|
 ---|---|---
-|`FIX_PKG_TYPOS`|`0`|Correction of package manager names when set to `1`|
+|`FIX_PKG_TYPOS`|`0`|Correction of package manager names when `1`|
+|`ENABLE_INSULTS`|`1`|Enable insults when scriipt is executed when `1`, shows corrected command when `0`|
 
 ## Adding additional insults
 When adding additional insults, take into consideration the following:
