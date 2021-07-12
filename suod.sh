@@ -6,8 +6,10 @@ then
     exit 1
 fi
 
-# Change this variable to 1 to enable package manager name typo correction.
+# Set this variable to 1 to enable package manager name typo correction.
 FIX_PKG_TYPOS=0
+# Set this variable to 0 to disable the script's insults.
+ENABLE_INSULTS=1
 
 insults=(
     "Are you supposed to be in sudoers, or did the sysadmin make a typo too?"
@@ -26,7 +28,7 @@ insults=(
     "The good ol' cat-walking-on-the-keyboard trick."
     "Wash your hands so you don't slip."
     "How many years of experience did you say you have again?"
-    "There's several good reasons you're not the sysadmin."
+    "Tonight on \"Are You Smarter Than a Skiddy...\""
 )
 
 # Package manager name typos and their corresponding correct names.
@@ -48,19 +50,39 @@ declare -A pkg_mgr_typos=(
 # Stores the rest of the command to be run as root.
 declare -a cmd
 
-# Construct the full corrected command from the arguments.
-if [ $FIX_PKG_TYPOS == 1 ] && [ $# -gt 0 ] && [ ! -z "${pkg_mgr_typos[$1]}" ]; then
-    cmd+=${pkg_mgr_typos[$1]}
+# Whether or not package manager name was corrected.
+# 1 = corrected, other integers = not corrected
+pkg_mgr_fixed=0
 
-    # Only add the other agruments if they exist.
-    if [ $# -gt 1 ]; then
+# Construct the full corrected command from the arguments.
+if  [ $# -gt 0 ]; then
+    # Only fix package manager name if a recognized typo was made.
+    if [ $FIX_PKG_TYPOS == 1 ] && [ ! -z "${pkg_mgr_typos[$1]}" ]; then
+        cmd+=${pkg_mgr_typos[$1]}
+        pkg_mgr_fixed=1
+    fi
+
+    # If the package manager name was corrected, that means the first
+    # element of the command sequence- start from the second instead.
+    if [ $pkg_mgr_fixed -eq 1 ]; then
         for (( i=2; i<=$#; i++ ))
         do
             cmd+=(${!i})
         done
+    else 
+        for (( i=1; i<=$#; i++ ))
+        do
+            cmd+=(${!i})
+        done
     fi
+    
     eval set -- ${cmd[*]}
 fi
 
-echo ${insults[$(($RANDOM % ${#insults[@]}))]}
+if [ $ENABLE_INSULTS -eq 1 ]; then
+    echo ${insults[$(($RANDOM % ${#insults[@]}))]}
+else
+    echo "sudo" "$@"
+fi
+
 sudo "$@"

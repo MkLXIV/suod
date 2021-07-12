@@ -24,14 +24,17 @@ alias sduo=/path/to/suod.sh
 ...or, if all you want is to have just one option like `suod`, then rename the script to `suod` and put it somewhere in your `$PATH` that's convenient to you.
 
 ### Correcting package manager names
-By default, fixing package manager names is disabled in case any of the mistyped package manager names are actually commands on your system. While I've attempted to keep the list of mistyped package manager names free of actual commands, even if obscure, I can't guarantee that there's no command with those names on your own system. Note that not every possible misspelling is included, just some that I feel are common or are probably common (I don't use every package manager). **To enable fixing package manager names**, change `FIX_PKG_TYPOS=0` near the top of `suod.sh` to `FIX_PKG_TYPOS=1`.
+By default, fixing package manager names is disabled in case any of the mistyped package manager names are actually commands on your system. While I've attempted to keep the list of mistyped package manager names free of actual commands, even if obscure, I can't guarantee that there's no command with those names on your own system. Note that not every possible misspelling is included, just some that I feel are common or are probably common (I don't use every package manager). **To enable fixing package manager names**, change the value of `FIX_PKG_TYPOS` near the top of `suod.sh` to `1`.
+
+### Disabling insults
+If you'd rather see the corrected command insteaf of an insult, you can change the value of `ENABLE_INSULTS` near the top of `suod.sh` to `0`.
 
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Future plans
-- [ ] Provide a means to turn off insults and instead display what the command corrected to. This should be fairly easy to implement.
+- [x] Provide a means to turn off insults and instead display what the command corrected to. This should be fairly easy to implement.
 - [ ] Correct some other common mistakes. What will be implemented depends on what is seen fit.
 
 ## License
-`suod` is licensed under the **Creative Commons Zero v1.0 Universal** license. That is, it's in the public domain. This code is so simple it doesn't really need something like the GNU GPL, the MIT License, BSD 2/3 clause, etc. If anything, I hope it teaches newcomers to Bash scripting some new tricks or is useful for solving oddly specific issues like constructing usable command sequences to call from a script.
+`suod` is licensed under the **Creative Commons Zero v1.0 Universal** license. That is, it's in the public domain. This code is so simple it doesn't really need something like the GNU GPL, the MIT License, BSD 2/3 clause, etc. If anything, I hope it teaches newcomers to Bash scripting some new tricks (as writing it did for me) or is useful for solving oddly specific issues like constructing usable command sequences to call from a script.
