@@ -29,6 +29,16 @@ insults=(
     "Wash your hands so you don't slip."
     "How many years of experience did you say you have again?"
     "Tonight on \"Are You Smarter Than a Skiddy...\""
+    "Keep your bad typing away from the production environment."
+    "I don't believe \"vibe typing\" is a real thing..."
+    "With the advent of the Steam Deck, noobs have flocked to Linux."
+    "At least Steve Jobs cared about the products he marketed."
+    "QA is dead and you're the poster child for that."
+    "Remember to check your work!"
+    "You specifically are why modern technology is so dumbed down."
+    "Meet the 0.01X systems administrator: you."
+    "^ Most botched command I've seen all day."
+    "Let me guess: JavaScript developer?"
 )
 
 # Package manager name typos and their corresponding correct names.
